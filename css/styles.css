@@ -16,7 +16,7 @@ header {
         background-color: #4A475B; /* Mantén el color de fondo si ya lo tenías */
         padding: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Añade una sombra para que destaque */
-        background-color: #4A475B;
+        background-color: #000000;
         color: black;
         padding: 10px;
         font-family:Arial, Helvetica, sans-serif; /* Tipo de letra por defecto */
@@ -31,7 +31,7 @@ header {
     grid-template-columns: 0.5fr 2fr 0.1fr 0.005fr ; /* Tres columnas: Logo, Búsqueda, Menú de Usuario */
     align-items: center;
     padding: 5px;
-    background-color: #ACC196;
+    background-color: #00aeff;
     border-radius: 16px;
     gap: 5px; /* Ajusta la separación entre columnas */
 }
@@ -61,7 +61,7 @@ header {
 .search-bar button {
     padding: 10px 20px;
     background-color: white;
-    color: #333;
+    color: #000000;
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -77,7 +77,7 @@ header {
 }
 
 .user-menu a {
-    color: rgb(0, 0, 0);
+    color: #000000;
     text-decoration: none;
     font-size: 17px; /* Tamaño de letra del menú */
     font-family: 'Verdana', sans-serif; /* Tipo de letra del menú de usuario */
@@ -115,8 +115,6 @@ header {
 }
 
 
-
-
 /* Parallax sections */
 .parallax-section {
     height: 100vh; /* Altura de la sección al 100% del viewport */
@@ -151,35 +149,11 @@ header {
     background-position: center;
     background-size: cover;
 
-    /*Post it*/
-     content: '';
-    position: absolute;
-    top:  0;
-    left: 0;
-    right: 0;
-    bottom: 40px;
-    z-index: -1; /* Para asegurar que el fondo esté detrás del contenido */
+   
 }
 
-/* Estilo del post-it */
-.post-it {
-    width: 250px;
-    height: 150px;
-    background-color: #ffeb3bd7; /* Color amarillo */
-    border: 2px solid #ccc;
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.541);
-    position: absolute; /* Posición absoluta dentro de la sección */
-    bottom: 300px;
-    right: 40px; /* Ajustar según sea necesario dentro de la sección */
-    opacity: 0; /* Comenzamos oculto */
-    padding: 40px;
-    font-family: 'Comic Sans MS', sans-serif;
-    font-size: 80px;
-    color: #000000;
-    text-align: center;
-    transition: opacity 10s ease-in-out;
-    z-index: 2; /* Asegura que el post-it esté por encima del fondo */
-}
+
+
 
 /* Imagen de la sección 2 */
 .section2::before {
@@ -197,12 +171,6 @@ header {
     background-size: cover;
 }
 
-/* Contenido dentro de las secciones */
-.content {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
-    border-radius: 10px;
-}
 
 h2 {
     font-size: 8rem;
@@ -212,24 +180,66 @@ p {
     font-size: 1.2rem
 }
 
+.floating-box {
+    position: fixed;
+    right: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 60px;
+    transition: top 1s ease, left 1s ease, background-color 1s ease; /* Tiempo de transición más largo para suavizar */
+}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+    /* Encabezado superior */
     .header-top {
-        grid-template-columns: 1fr; /* Apila los elementos en una columna */
-        gap: 10px;
+        display: flex;
+        flex-direction: column; /* Coloca los elementos en una columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        gap: 15px;
+        padding: 10px; /* Añade un poco de espacio interno */
     }
 
+    /* Ajustes de la barra de búsqueda */
     .search-bar input {
         width: 100%; /* El input ocupará todo el ancho disponible */
+        font-size: 1rem; /* Aumenta el tamaño del texto en el input */
     }
 
+    .search-bar button {
+        width: 100%; /* Botón se ajusta al 100% del ancho */
+        margin-top: 5px; /* Añade un poco de espacio superior */
+    }
+
+    /* Ajustes del menú de usuario */
     .user-menu {
-        justify-content: flex-start; /* Alinea el menú de usuario a la izquierda */
-    }
-
-    .header-nav {
-        grid-template-columns: 1fr; /* Apilar enlaces en vertical */
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se distribuyan en varias líneas si es necesario */
+        justify-content: center; /* Centra los elementos del menú */
         gap: 10px;
     }
+
+    .user-menu a {
+        font-size: 0.9rem; /* Reduce ligeramente el tamaño de las fuentes */
+    }
+
+    /* Navegación */
+    .header-nav {
+        display: flex;
+        flex-direction: column; /* Apilar enlaces en vertical */
+        align-items: center; /* Centrar enlaces de navegación */
+        gap: 10px;
+        padding: 10px; /* Espaciado adicional */
+    }
+
+    .header-nav a {
+        font-size: 1rem; /* Asegúrate de que los enlaces tengan un tamaño de texto adecuado */
+        padding: 8px 0; /* Añade espacio entre los enlaces */
+    }
 }
+
+
+

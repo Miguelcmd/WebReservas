@@ -1,24 +1,50 @@
-window.addEventListener('load', function() {
-    const postIt = document.getElementById('post-it');
-    setTimeout(function() {
-        postIt.style.opacity = '1'; // Cambia la opacidad a 1 para que aparezca
-    }, 1000); // Aparece después de 1 segundo
-});
+let lastKnownScrollPosition = 0;
+let ticking = false;
 
+function updateFloatingBox(scrollPos) {
+    const floatingBox = document.getElementById('floating-box');
+    const section1 = document.querySelector('.section1');
+    const section2 = document.querySelector('.section2');
+    const section3 = document.querySelector('.section3');
 
-window.addEventListener('load', function() {
-    const postIt = document.getElementById('post-it');
+    const section1Top = section1.getBoundingClientRect().top;
+    const section2Top = section2.getBoundingClientRect().top;
+    const section3Top = section3.getBoundingClientRect().top;
 
-    // Muestra el post-it después de 1 segundo
-    setTimeout(function() {
-        postIt.style.opacity = '1'; 
-    }, 1000);
+    // Cambia el contenido, posición, color del texto y la fuente basados en la sección
+    if (section1Top <= window.innerHeight / 2 && section1Top > -section1.clientHeight / 2) {
+        floatingBox.innerHTML = 'Sección actual: Domicilios';
+        floatingBox.style.top = '10%'; // Cambia la posición top
+        floatingBox.style.left = '20px'; // Cambia la posición left
+        floatingBox.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Color de fondo
+        floatingBox.style.color = '#333'; // Color del texto
+        floatingBox.style.fontFamily = "'Arial', sans-serif"; // Fuente
+    } else if (section2Top <= window.innerHeight / 2 && section2Top > -section2.clientHeight / 2) {
+        floatingBox.innerHTML = 'Sección actual: Restaurantes';
+        floatingBox.style.top = '50%'; // Cambia la posición más abajo
+        floatingBox.style.left = '100px'; // Ajuste de la posición en x
+        floatingBox.style.backgroundColor = 'rgba(200, 200, 255, 0.8)'; // Otro color de fondo
+        floatingBox.style.color = '#fff'; // Cambia el color del texto a blanco
+        floatingBox.style.fontFamily = "'Courier New', monospace"; // Cambia la fuente
+    } else if (section3Top <= window.innerHeight / 2 && section3Top > -section3.clientHeight / 2) {
+        floatingBox.innerHTML = 'Sección actual: Tiendas';
+        floatingBox.style.top = '80%'; // Lo ubicamos en la parte inferior
+        floatingBox.style.left = '300px'; // Ajuste de la posición en x
+        floatingBox.style.backgroundColor = 'rgba(255, 200, 200, 0.8)'; // Otro color de fondo
+        floatingBox.style.color = '#000'; // Cambia el color del texto a negro
+        floatingBox.style.fontFamily = "'Times New Roman', serif"; // Cambia la fuente
+    }
+}
 
-    // Mueve el post-it con el scroll
-    window.addEventListener('scroll', function() {
-        let scrollY = window.scrollY;
-        
-        // Ajusta la posición del post-it a medida que haces scroll
-        postIt.style.transform = `translateY(${scrollY}px)`;
-    });
+window.addEventListener('scroll', function() {
+    lastKnownScrollPosition = window.scrollY;
+
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            updateFloatingBox(lastKnownScrollPosition);
+            ticking = false;
+        });
+
+        ticking = true;
+    }
 });
