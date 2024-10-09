@@ -7,10 +7,22 @@
 
 /* Header styling */
 header {
-    background-color: #4A475B;
-    color: black;
-    padding: 10px;
-    font-family:Arial, Helvetica, sans-serif; /* Tipo de letra por defecto */
+
+        position: fixed; /* Hace que el header se mantenga fijo en la parte superior */
+        top: 0; /* Alineado con el borde superior de la ventana */
+        left: 0; /* Alineado con el borde izquierdo de la ventana */
+        width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
+        z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+        background-color: #4A475B; /* Mantén el color de fondo si ya lo tenías */
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Añade una sombra para que destaque */
+        background-color: #4A475B;
+        color: black;
+        padding: 10px;
+        font-family:Arial, Helvetica, sans-serif; /* Tipo de letra por defecto */
+    
+    
+    
 }
 
 /* Header top (Logo, search bar, and user menu) */
@@ -138,6 +150,35 @@ header {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+
+    /*Post it*/
+     content: '';
+    position: absolute;
+    top:  0;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    z-index: -1; /* Para asegurar que el fondo esté detrás del contenido */
+}
+
+/* Estilo del post-it */
+.post-it {
+    width: 250px;
+    height: 150px;
+    background-color: #ffeb3bd7; /* Color amarillo */
+    border: 2px solid #ccc;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.541);
+    position: absolute; /* Posición absoluta dentro de la sección */
+    bottom: 300px;
+    right: 40px; /* Ajustar según sea necesario dentro de la sección */
+    opacity: 0; /* Comenzamos oculto */
+    padding: 40px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 80px;
+    color: #000000;
+    text-align: center;
+    transition: opacity 10s ease-in-out;
+    z-index: 2; /* Asegura que el post-it esté por encima del fondo */
 }
 
 /* Imagen de la sección 2 */
@@ -164,11 +205,11 @@ header {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 8rem;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.2rem
 }
 
 
