@@ -132,11 +132,9 @@ header {
 
 
 
-
-
 /* Imagen de la sección 1 */
 .section1::before {
-    background-image: url('../images/fototienda.jpeg');
+    background-image: url('../images/Domi.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -152,7 +150,7 @@ header {
 
 /* Imagen de la sección 3 */
 .section3::before {
-    background-image: url('../images/domiciliofoto.webp');
+    background-image: url('../images/Mockup_Packaging_Hamburguesa.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
