@@ -188,58 +188,10 @@ p {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    font-size: 60px;
+    font-size: 3rem;
     transition: top 1s ease, left 1s ease, background-color 1s ease; /* Tiempo de transición más largo para suavizar */
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    /* Encabezado superior */
-    .header-top {
-        display: flex;
-        flex-direction: column; /* Coloca los elementos en una columna */
-        align-items: center; /* Centra los elementos horizontalmente */
-        gap: 15px;
-        padding: 10px; /* Añade un poco de espacio interno */
-    }
-
-    /* Ajustes de la barra de búsqueda */
-    .search-bar input {
-        width: 100%; /* El input ocupará todo el ancho disponible */
-        font-size: 1rem; /* Aumenta el tamaño del texto en el input */
-    }
-
-    .search-bar button {
-        width: 100%; /* Botón se ajusta al 100% del ancho */
-        margin-top: 5px; /* Añade un poco de espacio superior */
-    }
-
-    /* Ajustes del menú de usuario */
-    .user-menu {
-        display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se distribuyan en varias líneas si es necesario */
-        justify-content: center; /* Centra los elementos del menú */
-        gap: 10px;
-    }
-
-    .user-menu a {
-        font-size: 0.9rem; /* Reduce ligeramente el tamaño de las fuentes */
-    }
-
-    /* Navegación */
-    .header-nav {
-        display: flex;
-        flex-direction: column; /* Apilar enlaces en vertical */
-        align-items: center; /* Centrar enlaces de navegación */
-        gap: 10px;
-        padding: 10px; /* Espaciado adicional */
-    }
-
-    .header-nav a {
-        font-size: 1rem; /* Asegúrate de que los enlaces tengan un tamaño de texto adecuado */
-        padding: 8px 0; /* Añade espacio entre los enlaces */
-    }
-}
 
 
 
