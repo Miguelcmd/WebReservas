@@ -157,7 +157,7 @@ header {
 
 /* Imagen de la sección 2 */
 .section2::before {
-    background-image: url('../images/restaurante.jpg');
+    background-image: url('../images/topshot-comida.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
