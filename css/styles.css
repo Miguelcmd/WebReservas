@@ -135,6 +135,60 @@ header {
     width: auto; /* Mantiene las proporciones */
 }
 
+/* Elemento flotante para la búsqueda */
+.floating-search {
+    position: fixed;
+    top: 20px;  /* Ajusta la posición desde la parte inferior */
+    left: 150px;   /* Ajusta la posición desde la parte derecha */
+    z-index: 1000; /* Asegura que el elemento esté sobre otros */
+    width: 60px;   /* Dimensiones del círculo */
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo claro y semi-transparente */
+    border-radius: 50%; /* Hace que sea un círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    cursor: pointer; /* Cambia el cursor a "pointer" al pasar sobre el elemento */
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Transiciones suaves */
+}
+
+/* Ícono de la lupa dentro del círculo */
+.floating-search .search-icon {
+    width: 30px; /* Tamaño de la lupa */
+    height: 30px;
+}
+
+/* Cuadro de búsqueda que se despliega */
+.floating-search .search-input {
+    position: absolute;
+    bottom: 70px; /* Aparece justo encima del botón flotante */
+    right: 10px;
+    padding: 10px;
+    width: 200px; /* Ajusta el ancho del input */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: none; /* Oculto por defecto */
+}
+
+/* Cuando el input esté visible, amplía el cuadro */
+.floating-search.expanded {
+    width: 220px; /* Ajusta el ancho del círculo expandido */
+    height: 60px; /* Mantén la altura para la consistencia */
+    background-color: rgba(0, 0, 0, 0.8); /* Cambia el fondo al hacer clic */
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.floating-search.expanded .search-input {
+    display: block; /* Muestra el input al hacer clic */
+}
+
+.floating-search.expanded .search-icon {
+    display: none; /* Oculta la lupa al expandir */
+}
+
+
 
 /* Parallax sections */
 .parallax-section {

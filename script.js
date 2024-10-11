@@ -49,3 +49,26 @@ window.addEventListener('scroll', function() {
         ticking = true;
     }
 });
+
+
+// Selecciona el elemento flotante de búsqueda
+const floatingSearch = document.querySelector('.floating-search');
+const searchInput = document.querySelector('.search-input');
+
+// Evento para hacer clic en el ícono de la lupa
+floatingSearch.addEventListener('click', function() {
+    // Alterna la clase "expanded" para desplegar o cerrar el cuadro de búsqueda
+    floatingSearch.classList.toggle('expanded');
+    
+    // Si el cuadro de búsqueda está visible, enfócalo
+    if (searchInput.style.display === 'block') {
+        searchInput.focus();
+    }
+});
+
+// Evento para cerrar el cuadro de búsqueda si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    if (!floatingSearch.contains(event.target)) {
+        floatingSearch.classList.remove('expanded');
+    }
+});
