@@ -49,3 +49,22 @@ window.addEventListener('scroll', function() {
         ticking = true;
     }
 });
+
+// Interactividad del cuadro de busqueda
+document.querySelector('.search-icon').addEventListener('click', function() {
+    const searchInput = document.querySelector('.search-input');
+    if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'block';
+    } else {
+        searchInput.style.display = 'none';
+    }
+});
+
+document.querySelector('.menu-icon').addEventListener('click', function() {
+    const nav = document.querySelector('.header-nav');
+    if (nav.style.display === 'none' || nav.style.display === '') {
+        nav.style.display = 'flex';
+    } else {
+        nav.style.display = 'none';
+    }
+});
