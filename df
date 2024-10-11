@@ -1,0 +1,41 @@
+[33mcommit 1bec0777d138676536faa4a3a3871a4104417c0c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mmain[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Wed Oct 9 19:00:20 2024 -0500
+
+    Cambio de fondo seccion2
+
+[33mcommit c2ce2f8d41c08c7f0aaabcce00866657f426c9b9[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Wed Oct 9 18:38:13 2024 -0500
+
+    Punto de restauracion se elimina contenido en las secciones, inicio prueba titulos flotantes
+
+[33mcommit 565383db9614b5ebcec4360fff5ceb8538bd0adb[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Tue Oct 8 21:36:13 2024 -0500
+
+    Se crea post it con mensaje pagina en construccion el header ya no se desplaza con el scroll
+
+[33mcommit 96173f23b4caad61d4f9aa71f8c13ad57b38d960[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Tue Oct 8 20:23:29 2024 -0500
+
+    Cambio en imagenes de fondo
+
+[33mcommit 342be7b7f7670c60cd4a907c50bac87cc66e681e[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Tue Oct 8 17:51:25 2024 -0500
+
+    Se realiza integracion del efecto parallax con tres secciones y sus imagenes de fondo
+
+[33mcommit 21afb12a037a47a10d7ae8b1540e8b8932167404[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Tue Oct 8 15:02:06 2024 -0500
+
+    Añadido archivo Readme con la descripcion del proyecto
+
+[33mcommit b35c8c0a87e5ec7c2b738601e174d13d53126828[m
+Author: Miguelcmd <miguelangel-0921@live.com>
+Date:   Tue Oct 8 14:52:49 2024 -0500
+
+    Commit inicial boceto inicial header
