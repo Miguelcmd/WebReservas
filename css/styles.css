@@ -115,6 +115,27 @@ header {
 }
 
 
+/*Header interactivo*/
+
+/* Logo como floating box */
+.logo {
+    position: fixed; /* Hace que el logo esté siempre visible mientras se desplaza la página */
+    top: 30px;       /* Posición inicial desde el borde superior */
+    left: 20px;     /* Posición inicial desde el borde derecho */
+    z-index: 1000;   /* Asegura que el logo esté por encima de otros elementos */
+    background-color: rgba(255, 255, 255, 0.356); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 50%; /* Haz que el logo tenga forma redonda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: top 1s ease, right 1s ease, background-color 1s ease; /* Transiciones suaves */
+}
+
+.logo img {
+    height: 60px; /* Tamaño del logo */
+    width: auto; /* Mantiene las proporciones */
+}
+
+
 /* Parallax sections */
 .parallax-section {
     height: 100vh; /* Altura de la sección al 100% del viewport */
