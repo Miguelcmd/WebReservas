@@ -187,7 +187,130 @@ header {
 .floating-search.expanded .search-icon {
     display: none; /* Oculta la lupa al expandir */
 }
-
+/*menu flotante*/
+body {
+    margin: 0;
+    padding: 0;
+    
+    /* make it look decent enough */
+    background: #232323;
+    color: #cdcdcd;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+  }
+  
+  /* Menú hamburguesa flotante */
+  #menuToggle {
+    display: block;
+    position: fixed; /* Fijo para que siempre sea visible */
+    top: 20px;       /* Distancia desde la parte superior de la ventana */
+    right: 20px;     /* Distancia desde la derecha */
+    
+    z-index: 1000;   /* Asegura que esté sobre otros elementos */
+    
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  #menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    
+    transition: color 0.3s ease;
+  }
+  
+  #menuToggle a:hover {
+    color: tomato;
+  }
+  
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    
+    cursor: pointer;
+    
+    opacity: 0; /* Oculto */
+    z-index: 2; /* Y sobre el menú */
+    
+    -webkit-touch-callout: none;
+  }
+  
+  /* Estilo del ícono de hamburguesa */
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    
+    background: #cdcdcd;
+    border-radius: 3px;
+    
+    z-index: 1;
+    
+    transform-origin: 4px 0px;
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+  
+  /* Transforma las líneas en una cruz cuando se hace clic */
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+  
+  /* Oculta la línea del medio */
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  /* La última línea se mueve en la dirección opuesta */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  /* Menú flotante */
+  #menu {
+    position: fixed; /* Fijo para que flote en cualquier lugar de la página */
+    top: 0; /* Alinea en la parte superior de la ventana */
+    right: 0; /* Sale desde la derecha */
+    width: 300px; /* Ancho del menú */
+    height: 100%; /* Ocupa toda la altura */
+    background: #ededed;
+    list-style-type: none;
+    padding: 50px;
+    padding-top: 125px;
+    z-index: 999; /* Debajo del ícono de hamburguesa */
+    
+    transform: translateX(100%); /* Oculto inicialmente */
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  
+  #menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+  
+  /* Despliega el menú cuando se hace clic */
+  #menuToggle input:checked ~ ul {
+    transform: translateX(0); /* Muestra el menú */
+  }
+  
 
 
 /* Parallax sections */
